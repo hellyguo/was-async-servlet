@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+    <servlet>
+        <servlet-name>AsyncServlet</servlet-name>
+        <servlet-class>was.async.demo.AsyncServlet</servlet-class>   <!--Servlet的类-->
+        <init-param>                                     <!--初始化一个变量，可看成全局变量，可省略-->
+            <param-name>com.ibm.ws.webcontainers.async-supported</param-name>              <!--变量名称-->
+            <param-value>true</param-value>              <!--变量值-->
+        </init-param>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AsyncServlet</servlet-name>
+        <url-pattern>/*</url-pattern>                   <!--映射的url路径 -->
+    </servlet-mapping>
+</web-app>
